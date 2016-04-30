@@ -1,0 +1,7 @@
+[Match]
+Name=eth0
+[Address]
+Address=192.168.254.77/22
+[Route]
+Gateway=192.168.252.1
+
