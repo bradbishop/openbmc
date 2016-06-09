@@ -7,6 +7,3 @@ After=obmc-mapper.service
 Restart=always
 ExecStart=/usr/sbin/obmc-rest
 Environment="PYTHONUNBUFFERED=1"
-
-[Install]
-WantedBy=multi-user.target
