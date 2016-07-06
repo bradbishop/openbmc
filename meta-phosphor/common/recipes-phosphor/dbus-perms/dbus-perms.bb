@@ -4,9 +4,12 @@ HOMEPAGE = "http://github.com/openbmc/"
 PR = "r1"
 
 inherit allarch
+inherit dbus-dir
 inherit obmc-phosphor-license
-inherit obmc-phosphor-dbus-service
 
-DBUS_SERVICES += " \
-        org.openbmc \
-        "
+SRC_URI += "file://org.openbmc.conf"
+
+do_install_append() {
+        install -d ${D}${dbus_system_confdir}
+        install -m 644 ${WORKDIR}/org.openbmc.conf ${D}${dbus_system_confdir}
+}

@@ -7,10 +7,9 @@ LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=fa818a259cbed7ce8bc2a22d35a464fc"
 
 inherit allarch
 inherit obmc-phosphor-dbus-service
-inherit obmc-phosphor-systemd
 inherit setuptools
 
-DBUS_SERVICES += "org.openbmc.ObjectMapper"
+OBMC_DBUS_SERVICES += "org.openbmc.ObjectMapper"
 RDEPENDS_${PN} += " \
         python-xml \
         python-dbus \
