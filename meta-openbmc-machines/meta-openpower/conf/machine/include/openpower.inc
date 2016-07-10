@@ -34,3 +34,6 @@ PREFERRED_PROVIDER_virtual/obmc-phosphor-policy-mgmt = "skeleton"
 PREFERRED_PROVIDER_virtual/obmc-phosphor-sensor-mgmt = "skeleton"
 PREFERRED_PROVIDER_virtual/obmc-phosphor-system-mgmt = "skeleton"
 PREFERRED_PROVIDER_virtual/obmc-phosphor-user-mgmt = "obmc-phosphor-user"
+
+OBMC_DBUS_PROVIDERS[org-openbmc-managers-Download] = \
+        "obmc-mgr-download:org.openbmc.managers.Download"
