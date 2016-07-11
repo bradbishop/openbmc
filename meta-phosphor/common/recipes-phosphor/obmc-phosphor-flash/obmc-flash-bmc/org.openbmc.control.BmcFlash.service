@@ -1,0 +1,5 @@
+[Unit]
+Description=Phosphor OpenBMC BIOS code update
+
+[Service]
+ExecStart=@SBINDIR@/flash_bios.exe

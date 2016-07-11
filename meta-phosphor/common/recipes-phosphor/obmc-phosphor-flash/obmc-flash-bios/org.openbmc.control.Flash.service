@@ -1,0 +1,6 @@
+[Unit]
+Description=Phosphor OpenBMC BMC code update
+
+[Service]
+ExecStart=@SBINDIR@/bmc_update.py
+Environment="PYTHONUNBUFFERED=1"

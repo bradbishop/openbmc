@@ -1,0 +1,6 @@
+[Unit]
+Description=Phosphor OpenBMC DBus service management daemon
+
+[Service]
+ExecStart=@SBINDIR@/download_manager.py
+Environment="PYTHONUNBUFFERED=1"
