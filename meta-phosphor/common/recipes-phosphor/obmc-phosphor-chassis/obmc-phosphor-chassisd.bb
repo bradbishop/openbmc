@@ -3,10 +3,11 @@ DESCRIPTION = "Phosphor OpenBMC chassis management reference implementation."
 PR = "r1"
 
 inherit allarch
-inherit obmc-phosphor-chassis-mgmt
 inherit obmc-phosphor-dbus-service
 inherit obmc-phosphor-license
 
+PROVIDES += "virtual/obmc-chassis-mgmt"
+RPROVIDES_${PN} += "virtual-obmc-chassis-mgmt"
 RDEPENDS_${PN} += "python-dbus python-pygobject"
 
 S = "${WORKDIR}"

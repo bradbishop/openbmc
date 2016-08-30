@@ -2,10 +2,12 @@ SUMMARY = "Phosphor OpenBMC Policy Management"
 DESCRIPTION = "Phosphor OpenBMC policy management reference implementation."
 PR = "r1"
 
-inherit obmc-phosphor-policy-mgmt
 inherit allarch
 inherit obmc-phosphor-license
 inherit obmc-phosphor-dbus-service
+
+RPROVIDES_${PN} += "virtual-obmc-policy-mgmt"
+PROVIDES += "virtual/obmc-policy-mgmt"
 
 RDEPENDS_${PN} += "python-dbus python-pygobject"
 

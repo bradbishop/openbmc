@@ -2,10 +2,12 @@ SUMMARY = "Phosphor OpenBMC System Management"
 DESCRIPTION = "Phosphor OpenBMC system management reference implementation."
 PR = "r1"
 
-inherit obmc-phosphor-system-mgmt
 inherit allarch
 inherit obmc-phosphor-license
 inherit obmc-phosphor-dbus-service
+
+RPROVIDES_${PN} += "virtual-obmc-system-mgmt"
+PROVIDES += "virtual/obmc-system-mgmt"
 
 RDEPENDS_${PN} += "python-dbus python-pygobject"
 

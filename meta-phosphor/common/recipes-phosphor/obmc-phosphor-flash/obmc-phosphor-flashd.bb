@@ -2,11 +2,12 @@ SUMMARY = "Phosphor OpenBMC Flash Management"
 DESCRIPTION = "Phosphor OpenBMC flash management reference implementation."
 PR = "r1"
 
-inherit obmc-phosphor-flash-mgmt
 inherit obmc-phosphor-dbus-service
 inherit allarch
 inherit obmc-phosphor-license
 
+RPROVIDES_${PN} += "virtual-obmc-flash-mgmt"
+PROVIDES += "virtual/obmc-flash-mgmt"
 
 RDEPENDS_${PN} += "python-dbus python-pygobject"
 

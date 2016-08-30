@@ -2,10 +2,12 @@ SUMMARY = "Phosphor OpenBMC Sensor Management"
 DESCRIPTION = "Phosphor OpenBMC sensor management reference implementation."
 PR = "r1"
 
-inherit obmc-phosphor-sensor-mgmt
 inherit allarch
 inherit obmc-phosphor-license
 inherit obmc-phosphor-dbus-service
+
+RPROVIDES_${PN} += "virtual-obmc-sensor-mgmt"
+PROVIDES += "virtual/obmc-sensor-mgmt"
 
 RDEPENDS_${PN} += "python-dbus python-pygobject"
 

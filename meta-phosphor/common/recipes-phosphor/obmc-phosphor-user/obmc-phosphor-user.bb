@@ -4,9 +4,10 @@ HOMEPAGE = "http://github.com/openbmc/phosphor-networkd"
 PR = "r1"
 
 inherit obmc-phosphor-license
-inherit obmc-phosphor-user-mgmt
 inherit obmc-phosphor-systemd
 
+RPROVIDES_${PN} += "virtual-obmc-user-mgmt"
+PROVIDES += "virtual/obmc-user-mgmt"
 RDEPENDS_${PN} += "python-dbus python-pygobject python-pexpect"
 
 SRC_URI += "git://github.com/openbmc/phosphor-networkd"

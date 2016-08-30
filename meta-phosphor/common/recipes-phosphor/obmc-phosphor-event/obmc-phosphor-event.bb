@@ -5,7 +5,6 @@ PR = "r1"
 
 
 inherit obmc-phosphor-license
-inherit obmc-phosphor-event-mgmt
 inherit obmc-phosphor-dbus-service
 
 TARGET_CPPFLAGS += "-std=c++11 -fpic"
@@ -13,6 +12,9 @@ TARGET_CPPFLAGS += "-std=c++11 -fpic"
 SRC_URI += "git://github.com/openbmc/phosphor-event"
 
 SRCREV = "4dad23916e69d55d692eca7389d67eb023c5ca66"
+
+RPROVIDES_${PN} += "virtual-obmc-event-mgmt"
+PROVIDES += "virtual/obmc-event-mgmt"
 
 RDEPENDS_${PN} += "libsystemd"
 DEPENDS += "systemd"
