@@ -7,6 +7,8 @@ PR = "r1"
 inherit obmc-phosphor-license
 inherit obmc-phosphor-dbus-service
 
+PROVIDES += "virtual/obmc-netprovider"
+RPROVIDES_${PN} += "virtual-obmc-netprovider"
 DEPENDS += "systemd"
 DBUS_SERVICE_${PN} += "org.openbmc.NetworkManager.service"
 SYSTEMD_SERVICE_${PN} += "network-update-dns.service"
