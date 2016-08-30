@@ -2,9 +2,11 @@
 Description=Phosphor Event Manager
 
 [Service]
-EnvironmentFile=-/etc/default/eventd/eventd.conf
+EnvironmentFile={envfiledir}/obmc/eventd/eventd.conf
 Restart=always
 ExecStart={sbindir}/obmc-phosphor-eventd $OPTIONS
+Type=dbus
+BusName={BUSNAME}
 
 [Install]
 WantedBy={SYSTEMD_DEFAULT_TARGET}
