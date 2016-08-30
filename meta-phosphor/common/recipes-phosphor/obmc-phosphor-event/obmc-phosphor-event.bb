@@ -7,7 +7,6 @@ PR = "r1"
 inherit obmc-phosphor-license
 inherit obmc-phosphor-event-mgmt
 inherit obmc-phosphor-dbus-service
-inherit obmc-phosphor-c-daemon
 
 TARGET_CPPFLAGS += "-std=c++11 -fpic"
 
@@ -22,10 +21,9 @@ DBUS_SERVICE_${PN} = "org.openbmc.records.events.service"
 SYSTEMD_ENVIRONMENT_FILE_${PN} += "obmc/eventd/eventd.conf"
 
 S = "${WORKDIR}/git"
-INSTALL_NAME = "event_messaged"
 
 do_install() {
         install -d ${D}/var/lib/obmc/events/
         install -m 0755 -d ${D}${sbindir}
-        install -m 0755 ${S}/${INSTALL_NAME} ${D}/${sbindir}/obmc-phosphor-eventd
+        install -m 0755 ${S}/event_messaged ${D}${sbindir}
 }

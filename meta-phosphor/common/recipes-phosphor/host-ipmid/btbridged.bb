@@ -3,7 +3,7 @@ DESCRIPTION = "Phosphor OpenBMC BT to DBUS."
 PR = "r1"
 
 inherit obmc-phosphor-dbus-service
-inherit obmc-phosphor-c-daemon
+inherit obmc-phosphor-license
 
 DBUS_SERVICE_${PN} = "org.openbmc.HostIpmi.service"
 
@@ -19,3 +19,8 @@ SRCREV="39b3700766d851009258544aa0f75365f024c597"
 # This is how linux-libc-headers says to include custom uapi headers
 EXTRA_OEMAKE_append = "CFLAGS=-I${STAGING_KERNEL_DIR}/include/uapi"
 do_configure[depends] += "virtual/kernel:do_shared_workdir"
+
+do_install_append() {
+        install -d ${D}${sbindir}
+        install -m 0755 ${S}/${PN} ${D}${sbindir}
+}

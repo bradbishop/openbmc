@@ -10,7 +10,6 @@ RRECOMMENDS_${PN} += "${VIRTUAL-RUNTIME_obmc-phosphor-ipmi-parsers}"
 
 inherit obmc-phosphor-license
 inherit obmc-phosphor-dbus-service
-inherit obmc-phosphor-c-daemon
 
 TARGET_CFLAGS   += "-fpic"
 
@@ -28,7 +27,6 @@ SRC_URI += "git://github.com/openbmc/phosphor-host-ipmid"
 SRCREV = "bc40c178bb0b345ed1edf553b94369330003af34"
 
 S = "${WORKDIR}/git"
-INSTALL_NAME = "ipmid"
 
 do_install() {
         install -m 0755 -d ${D}${libdir}/host-ipmid
@@ -36,4 +34,7 @@ do_install() {
 
         install -m 0755 -d ${D}${includedir}/host-ipmid
         install -m 0644 ${S}/ipmid-api.h ${D}${includedir}/host-ipmid/
+
+	install -d ${D}${sbindir}
+        install -m 0755 ${S}/ipmid ${D}${sbindir}
 }
