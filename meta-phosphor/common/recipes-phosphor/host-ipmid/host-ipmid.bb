@@ -9,17 +9,20 @@ RRECOMMENDS_${PN} += "${VIRTUAL-RUNTIME_obmc-phosphor-ipmi-parsers}"
 
 
 inherit obmc-phosphor-license
-inherit obmc-phosphor-sdbus-service
+inherit obmc-phosphor-dbus-service
 inherit obmc-phosphor-c-daemon
 
 TARGET_CFLAGS   += "-fpic"
 
-DEPENDS += "obmc-mapper"
+DBUS_SERVICE_${PN} = "org.openbmc.HostServices.service"
+
+DEPENDS += "systemd obmc-mapper"
 RDEPENDS_${PN}-dev += "obmc-mapper-dev"
 RDEPENDS_${PN} += "clear-once"
 RDEPENDS_${PN} += "settings"
 RDEPENDS_${PN} += "network"
 RDEPENDS_${PN} += "libmapper"
+RDEPENDS_${PN} += "libsystemd"
 SRC_URI += "git://github.com/openbmc/phosphor-host-ipmid"
 
 SRCREV = "bc40c178bb0b345ed1edf553b94369330003af34"
