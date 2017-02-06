@@ -8,6 +8,7 @@ inherit autotools \
         pkgconfig \
         pythonnative \
         phosphor-inventory-manager \
+        phosphor-dbus-interfaces \
         obmc-phosphor-dbus-service
 
 require phosphor-inventory-manager.inc
@@ -16,9 +17,12 @@ DEPENDS += " \
         ${PN}-config-native \
         sdbusplus \
         sdbusplus-native \
+        phosphor-logging \
+        phosphor-dbus-interfaces \
+        phosphor-dbus-interfaces-native \
         autoconf-archive-native \
         "
-RDEPENDS_${PN} += "sdbusplus"
+RDEPENDS_${PN} += "sdbusplus phosphor-dbus-interfaces"
 
 OBMC_INVENTORY_PATH="${OBMC_DBUS_PATH_ROOT}/Inventory"
 OBMC_INVENTORY_MGR_IFACE="${OBMC_DBUS_IFACE_ROOT}.Inventory.Manager"
@@ -32,4 +36,5 @@ EXTRA_OECONF = " \
         BUSNAME=${OBMC_INVENTORY_MGR_IFACE} \
         INVENTORY_ROOT=${OBMC_INVENTORY_PATH} \
         IFACE=${OBMC_INVENTORY_MGR_IFACE} \
+        IFACES_PATH=${STAGING_DIR_NATIVE}${yaml_dir} \
         "
