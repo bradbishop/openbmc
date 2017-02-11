@@ -20,8 +20,8 @@ RDEPENDS_${PN} += "sdbusplus phosphor-dbus-interfaces"
 PROVIDES += "virtual/obmc-logging-mgmt"
 RPROVIDES_${PN} += "virtual-obmc-logging-mgmt"
 
-SRC_URI += "git://github.com/openbmc/phosphor-logging"
-SRCREV = "8692ac9fba635a27e6f711450f41f518129a7d6e"
+SRC_URI += "git://github.com/bradbishop/phosphor-logging;branch=stage2"
+SRCREV = "a88404db7bc9a90bc6cb588399d4086b0b096985"
 
 S = "${WORKDIR}/git"
 
