@@ -30,8 +30,8 @@ DEPENDS_append_class-native = " \
         python-pyyaml-native \
         "
 
-SRC_URI += "git://github.com/openbmc/sdbusplus"
-SRCREV = "9a0baf5096d81a17b6c73cc14f77f2ef23658dab"
+SRC_URI += "git://github.com/bradbishop/sdbusplus;branch=stage2"
+SRCREV = "a734fb259789c19aab1f3406b9a700fa155a18d0"
 
 PACKAGECONFIG ??= "libsdbusplus"
 PACKAGECONFIG[libsdbusplus] = "--enable-libsdbusplus,--disable-libsdbusplus,systemd,libsystemd"
