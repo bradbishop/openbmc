@@ -15,14 +15,19 @@ PACKAGE_BEFORE_PN = "${PN}-yaml"
 
 FILES_${PN}-yaml = "${datadir}/${PN}/yaml"
 
-SRC_URI += "git://github.com/openbmc/phosphor-dbus-interfaces"
-SRCREV = "06e5b23a3671f44c04c7f7cce83def5ff68c86b9"
+SRC_URI += "git://github.com/bradbishop/phosphor-dbus-interfaces;branch=stage2"
+SRCREV = "03297e537cbd4ffc79689ab68d83e605c38e3e39"
 
 DEPENDS_remove_class-native = "sdbus++-native"
 DEPENDS_remove_class-nativesdk = "sdbus++-native"
 
 PACKAGECONFIG ??= "libphosphor_dbus"
-PACKAGECONFIG[libphosphor_dbus] = "--enable-libphosphor_dbus,--disable-libphosphor_dbus,sdbusplus,libsystemd"
+PACKAGECONFIG[libphosphor_dbus] = " \
+        --enable-libphosphor_dbus, \
+        --disable-libphosphor_dbus, \
+        systemd sdbusplus, \
+        libsystemd sdbusplus \
+        "
 
 PACKAGECONFIG_remove_class-native = "libphosphor_dbus"
 PACKAGECONFIG_remove_class-nativesdk = "libphosphor_dbus"
