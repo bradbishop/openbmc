@@ -14,3 +14,5 @@ INITRAMFS_CTYPE ?= "lzma"
 INITRAMFS_FSTYPES += "cpio.${INITRAMFS_CTYPE}"
 INITRAMFS_IMAGE ?= "obmc-phosphor-initramfs"
 INITRAMFS_IMAGE_df-obmc-ubi-fs ?= ""
+
+IMAGE_FSTYPES_remove = "aspeed-mtdimg"
