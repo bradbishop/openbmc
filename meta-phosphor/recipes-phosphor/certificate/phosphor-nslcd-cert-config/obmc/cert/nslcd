@@ -1,0 +1,4 @@
+ENDPOINT=LDAP
+CERTPATH=/etc/ldap/certs/cert.pem
+UNIT=nslcd.service
+TYPE=Client
