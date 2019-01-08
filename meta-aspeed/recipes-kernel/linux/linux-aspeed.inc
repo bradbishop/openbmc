@@ -13,6 +13,7 @@ KCONFIG_MODE="--alldefconfig"
 KSRC ?= "git://github.com/openbmc/linux;protocol=git;branch=${KBRANCH}"
 SRC_URI = "${KSRC}"
 SRC_URI += " file://defconfig"
+SRC_URI += " file://aspeed-ast2500-apollo.dts;subdir=git/arch/arm/boot/dts"
 
 FILESEXTRAPATHS_prepend_ast2400 := "${THISDIR}/ast2400:"
 FILESEXTRAPATHS_prepend_ast2500 := "${THISDIR}/ast2500:"

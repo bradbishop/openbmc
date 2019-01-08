@@ -1,0 +1,15 @@
+# LAYER_CONF_VERSION is increased each time build/conf/bblayers.conf
+# changes incompatibly
+LCONF_VERSION = "7"
+
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+
+BBLAYERS ?= " \
+  /home/bradleyb/projects/openbmc/openbmc/meta \
+  /home/bradleyb/projects/openbmc/openbmc/meta-aspeed \
+  "
+BBLAYERS_NON_REMOVABLE ?= " \
+  /home/bradleyb/projects/openbmc/openbmc/meta \
+  /home/bradleyb/projects/openbmc/openbmc/meta-aspeed \
+  "
