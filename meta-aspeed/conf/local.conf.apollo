@@ -15,7 +15,7 @@ BB_DISKMON_DIRS = "\
     ABORT,/tmp,10M,1K"
 CONF_VERSION = "1"
 MACHINE_FEATURES_BACKFILL_CONSIDERED = "qemu-usermode"
-IMAGE_INSTALL_append = "i2c-tools dropbear libstdc++"
+IMAGE_INSTALL_append = " i2c-tools dropbear libstdc++"
 
 INHERIT += "extrausers"
 
