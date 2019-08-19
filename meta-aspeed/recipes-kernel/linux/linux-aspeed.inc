@@ -9,7 +9,7 @@ KCONFIG_MODE="--alldefconfig"
 KSRC ?= "git://github.com/openbmc/linux;protocol=git;branch=${KBRANCH}"
 SRC_URI = "${KSRC}"
 SRC_URI += " file://defconfig"
-SRC_URI_append_apollo = " file://aspeed-ast2500-apollo.dts;subdir=git/arch/arm/boot/dts"
+SRC_URI_append_apollo = " file://${APOLLO_DEVICETREE}.dts;subdir=git/arch/arm/boot/dts"
 
 LINUX_VERSION_EXTENSION ?= "-${SRCREV}"
 
