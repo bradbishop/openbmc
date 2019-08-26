@@ -1,0 +1,28 @@
+From a9b487846261a4edefe80ca249978d4319be5268 Mon Sep 17 00:00:00 2001
+From: Eddie James <eajames@linux.ibm.com>
+Date: Wed, 4 Sep 2019 15:35:11 -0500
+Subject: [PATCH 2/4] i2c: Aspeed: Add AST2600 compatible
+
+Signed-off-by: Eddie James <eajames@linux.ibm.com>
+---
+ drivers/i2c/busses/i2c-aspeed.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/drivers/i2c/busses/i2c-aspeed.c b/drivers/i2c/busses/i2c-aspeed.c
+index 89317929bee4..194397740a32 100644
+--- a/drivers/i2c/busses/i2c-aspeed.c
++++ b/drivers/i2c/busses/i2c-aspeed.c
+@@ -1274,6 +1274,10 @@ static const struct of_device_id aspeed_i2c_bus_of_table[] = {
+ 		.compatible = "aspeed,ast2500-i2c-bus",
+ 		.data = aspeed_i2c_25xx_get_clk_reg_val,
+ 	},
++	{
++		.compatible = "aspeed,ast2600-i2c-bus",
++		.data = aspeed_i2c_25xx_get_clk_reg_val,
++	},
+ 	{ },
+ };
+ MODULE_DEVICE_TABLE(of, aspeed_i2c_bus_of_table);
+-- 
+2.21.0
+
